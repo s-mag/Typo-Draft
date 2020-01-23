@@ -5,7 +5,7 @@ A note taking app built with python using Tkinter GUI and mysql as database.
 ## Made in Python 3.7
 - Clone this Project.
 - Install all the fonts on your system.
-- Import necessary modules in the code file.
+- Import necessary modules that are in the code file.
 - Run main.py file.
 
 ## Why note taking ?
