@@ -87,8 +87,9 @@ def editnotes():
             cur=con.cursor()
             q="select id from new_notes"
             cur.execute(q)
-            data=list(cur.fetchall())
+            data=cur.fetchall()
             query2="update new_notes set text='%s' where id='%s'" % (msg,nid)
+            print(data)
             for i in data:
                 if nid in i:
                     cur.execute(query2)
@@ -97,7 +98,7 @@ def editnotes():
                     root.withdraw()
                     root.deiconify()
                     break
-                if nid=='':
+                elif nid=='':
                     messagebox.showinfo("UPDATE STATUS", "Note not found")
                     root.withdraw()
                     root.deiconify()
@@ -145,7 +146,7 @@ def searchnotes():
         cur=con.cursor()
         q="select id from new_notes"
         cur.execute(q)
-        data=list(cur.fetchall())
+        data=cur.fetchall()
         query3="select * from new_notes where id={}".format(nid)
         print(data)
         for i in data:
