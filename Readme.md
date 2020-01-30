@@ -19,6 +19,15 @@ It is very useful for College and school going students
 - Now run main.py file which will start your Application.
 - You can search notes,sort them by alphabets or numbers and to edit them just click on the note you want to edit
 
+## Screenshots:
+<img width="960" alt="Capture" src="https://user-images.githubusercontent.com/44548987/73014651-919c7380-3e40-11ea-92ae-96ef4f6c8f4d.PNG">
+
+<img width="732" alt="CreateNotes" src="https://user-images.githubusercontent.com/44548987/73014652-919c7380-3e40-11ea-85b4-6fc6534ed153.PNG">
+
+<img width="301" alt="Main" src="https://user-images.githubusercontent.com/44548987/73014653-919c7380-3e40-11ea-9a71-d111de70e811.PNG">
+
+<img width="960" alt="Mainscreen" src="https://user-images.githubusercontent.com/44548987/73014655-92350a00-3e40-11ea-809b-c26e9a811ea5.PNG">
+
 ### GUI
 Tkinter is used to develop the GUI of the application.Tkinter is the standard GUI library for Python. Python when combined with Tkinter provides a fast and easy way to create GUI applications. Tkinter provides a powerful object-oriented interface to the Tk GUI toolkit.
 Creating a GUI application using Tkinter is an easy task. All you need to do is perform the following steps −
