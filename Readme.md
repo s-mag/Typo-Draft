@@ -3,6 +3,13 @@ A note taking app built with python using Tkinter GUI and mysql as database.
 
 # INSTALLATION
 ## Made in Python 3.7
+
+###Make sure to have these installed :-
+- mysql
+- mysql-connector(python)
+- tkinter
+
+### Now :-
 - Clone this Project.
 - Install all the fonts on your system.
 - Import necessary modules that are in the code file.
