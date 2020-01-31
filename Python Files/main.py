@@ -18,10 +18,8 @@ def create():
     try:
         con=sc.connect(host="localhost",database='Notes',user='root',password='1234')
         cur=con.cursor()
-        query1="create database if not exists Notes;"
-        query2="create table if not exists new_notes(id varchar(50) primary key,text text(4294967295));"
+        query1="create table if not exists new_notes(id varchar(50) primary key,text text(4294967295));"
         cur.execute(query1)
-        cur.execute(query2)
         con.commit()
     except sc.DatabaseError as err:
         if con:
