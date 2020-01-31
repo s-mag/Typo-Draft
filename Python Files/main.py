@@ -14,7 +14,21 @@ def notes():
     import working
 def dest():
     root.destroy()
-def create():
+def database():
+    try:
+        con=sc.connect(host="localhost",user='root',password='1234')
+        cur=con.cursor()
+        query1="create database Notes;"
+        cur.execute(query1)
+        con.commit()
+    except sc.DatabaseError as err:
+        if con:
+            con.rollback()
+            print(err)
+    finally:
+        con.close()
+        cur.close()
+def table():
     try:
         con=sc.connect(host="localhost",database='Notes',user='root',password='1234')
         cur=con.cursor()
@@ -30,7 +44,8 @@ def create():
         cur.close()
 def func():
     dest()
-    create()
+    database()
+    table()
     notes()
 
 b1=Button(root,text="START APP",command=func,bg ="black",fg='white',padx=40,pady=10,font=('Marvel','15','bold'))
