@@ -89,7 +89,6 @@ def editnotes():
             cur.execute(q)
             data=cur.fetchall()
             query2="update new_notes set text='%s' where id='%s'" % (msg,nid)
-            print(data)
             for i in data:
                 if nid in i:
                     cur.execute(query2)
@@ -103,11 +102,10 @@ def editnotes():
                     root.withdraw()
                     root.deiconify()
                     break
-                else:
-                    messagebox.showinfo("UPDATE STATUS", "Note not found")
-                    root.withdraw()
-                    root.deiconify()
-                    break
+            else:
+                messagebox.showinfo("UPDATE STATUS", "Note not found")
+                root.withdraw()
+                root.deiconify()
             
         except sc.DatabaseError as err:
             if con:
@@ -148,7 +146,6 @@ def searchnotes():
         cur.execute(q)
         data=cur.fetchall()
         query3="select * from new_notes where id={}".format(nid)
-        print(data)
         for i in data:
             if nid in i:
                 cur.execute(query3)
@@ -158,12 +155,11 @@ def searchnotes():
             elif nid=='':
                 messagebox.showinfo("SEARCH STATUS", "Enter ID to search")
                 break
-            else:
-                messagebox.showinfo("SEARCH STATUS", "Note not found")
-                break
+        else:
+            messagebox.showinfo("SEARCH STATUS", "Note not found")
+
         if data==[]:
             messagebox.showinfo("SEARCH STATUS", "No data in database")
-            
         con.commit()
     except sc.DatabaseError as err:
         if con:
@@ -188,15 +184,15 @@ def deletenotes():
         query4="delete from new_notes where id={}".format(nid)
         for i in data:
             if nid in i:
+                print(nid)
                 cur.execute(query4)
                 messagebox.showinfo("DELETION STATUS", "Note Deleted")
                 break
             elif nid=='':
                 messagebox.showinfo("DELETION STATUS", "Enter ID to delete")
                 break
-            else:
-                messagebox.showinfo("DELETION STATUS", "Notes not found to be deleted")
-                break
+        else:
+            messagebox.showinfo("DELETION STATUS", "Notes not found to be deleted")
         if data==[]:
             messagebox.showinfo("DELETION STATUS", "No data in database")
         con.commit()
